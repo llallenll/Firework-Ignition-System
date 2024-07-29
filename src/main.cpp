@@ -5,6 +5,7 @@
 
 #include <BlynkSimpleEsp32.h>
 
+// Create Relay Modules 
 const int relay1 = 0;
 const int relay2 = 4;
 const int relay3 = 16;
@@ -15,6 +16,7 @@ void setup()
   Serial.begin(115200);
   Blynk.begin(BLYNK_AUTH_TOKEN, "Wokwi-GUEST", "");
 
+  // Initialize Relay Modules 
   pinMode(relay1, OUTPUT);
   pinMode(relay2, OUTPUT);
   pinMode(relay3, OUTPUT);
