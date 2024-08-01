@@ -8,7 +8,18 @@
     { "type": "wokwi-relay-module", "id": "relay2", "top": -76.6, "left": 259.2, "attrs": {} },
     { "type": "wokwi-relay-module", "id": "relay3", "top": -19, "left": 259.2, "attrs": {} },
     { "type": "wokwi-relay-module", "id": "relay4", "top": 96.2, "left": 259.2, "attrs": {} },
-    { "type": "wokwi-slide-switch", "id": "sw1", "top": -120.4, "left": 137.5, "attrs": {} }
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": -120.4, "left": 137.5, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -186,
+      "left": 138.2,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-led", "id": "led2", "top": -70.8, "left": 407, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led3", "top": 102, "left": 407, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led4", "top": -13.2, "left": 407, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led5", "top": 44.4, "left": 407, "attrs": { "color": "red" } }
   ],
   "connections": [
     [ "esp:GND.2", "relay2:GND", "black", [ "v0" ] ],
@@ -23,7 +34,17 @@
     [ "relay3:IN", "esp:16", "green", [ "h-19.2", "v95.8" ] ],
     [ "relay2:IN", "esp:17", "green", [ "h-28.8", "v143.8" ] ],
     [ "sw1:3", "relay2:VCC", "red", [ "v0" ] ],
-    [ "sw1:2", "esp:5V", "red", [ "v28.8", "h-172.7", "v240" ] ]
+    [ "sw1:2", "esp:5V", "red", [ "v28.8", "h-172.7", "v240" ] ],
+    [ "esp:GND.2", "led1:C", "black", [ "v0" ] ],
+    [ "led1:C", "led2:C", "black", [ "v9.6", "h259.6" ] ],
+    [ "led4:C", "led2:C", "black", [ "v0" ] ],
+    [ "led4:C", "led5:C", "black", [ "v0" ] ],
+    [ "led5:C", "led3:C", "black", [ "v0" ] ],
+    [ "led2:A", "esp:5", "green", [ "v-57.6", "h-211.2", "v182.4" ] ],
+    [ "led4:A", "esp:18", "green", [ "v-124.8", "h-220.8", "v182.4" ] ],
+    [ "led5:A", "esp:19", "green", [ "v-192", "h-230.4", "v182.4" ] ],
+    [ "led3:A", "esp:21", "green", [ "v-259.2", "h-240", "v182.4" ] ],
+    [ "esp:22", "led1:A", "green", [ "h86.4", "v-172.8" ] ]
   ],
   "dependencies": {}
 }
